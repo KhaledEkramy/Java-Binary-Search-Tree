@@ -124,13 +124,12 @@ public class BinaryTree{
 				NumOfSwaps++ ;
 				return current ;
 			}
-		}else if(current.right != null && current.left == null) {
+		}else if(current.left == null) {
 			if(current == root) {
 				root = current.right ;
 				NumOfSwaps++ ;
 				return current ;
-			}
-			if(isLeftChild) {
+			}else if(isLeftChild) {
 				parent.left = current.right ;
 				NumOfSwaps++ ;
 				return current ;
@@ -145,7 +144,7 @@ public class BinaryTree{
 			if(current == root ) {
 				root = successor ;
 				NumOfSwaps++ ;
-				successor.left = root.left ;
+				successor.left = current.left ;
 				return current ;
 			}else if(isLeftChild) {
 				parent.left = successor ;
@@ -174,7 +173,7 @@ public class BinaryTree{
 		}
 		
 		NumOfComparisons++ ;
-		if(successor != delNode) {
+		if(successor != delNode.right) {
 			successorParent.left = successor.right ;
 			successor.right = delNode.right ;
 			NumOfSwaps++ ;
@@ -220,7 +219,7 @@ public class BinaryTree{
 	
 	private int calcHeight(Node localRoot) {
 		
-		int leftHeight = -1, rightHeight = -1;  
+        int leftHeight = -1, rightHeight = -1;  
 
         if(localRoot.left != null)  
             leftHeight = calcHeight(localRoot.left);  
@@ -254,11 +253,11 @@ public class BinaryTree{
 	}
 	
 	
-	public boolean containsNonBST(int item) {
+	public boolean containsNonBST(long item) {
 		return isExist(root , item) ;
 	}
 	
-	private  boolean isExist(Node localRoot , int item) {
+	private  boolean isExist(Node localRoot , long item) {
 		
 		if(localRoot == null) 
 			return false ;
@@ -305,10 +304,15 @@ public class BinaryTree{
 	public void displayBinaryTree() {
 		System.out.println("Display Inorder : ");
 		displayInOrder(root) ;
+                System.out.println("");
+                
 		System.out.println("Dislplay preorder : ");
 		displayPreOrder(root) ;
+                System.out.println("");
+                
 		System.out.println("Display postorder : ");
 		displayPostOrder(root) ;
+                System.out.println("");
 		
 	}
 	
