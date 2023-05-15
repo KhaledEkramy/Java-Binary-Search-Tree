@@ -49,21 +49,21 @@ public class BinarySearchTree {
     	System.out.println("The maximum Value = " ) ;
     	tree.findMaxValue().display();
     	
-    	System.out.println("After deleting key of 12 : ");
-    	tree.delete(12) ;
+    	System.out.println("After deleting key of 83927501 : ");
+    	tree.delete(83927501) ;
     	tree.displayBinaryTree();
     	
     	System.out.println("After deleting max and min value : ");
-    	tree.delete(20) ;
-    	tree.delete(7) ;
+    	tree.delete(tree.findMaxValue().getID()) ;
+    	tree.delete(tree.findMinValue().getID()) ;
     	tree.displayBinaryTree();
     	
     	System.out.println("The height of the tree equals : " + tree.height());
     	
     	System.out.println("The number of elements in the binary tree = " + tree.size());
     	
-    	System.out.print("Finding student with ID = 23819275 : " );
-    	System.out.println(tree.containsNonBST(23819275));
+    	System.out.print("Finding student with ID = 67403819 : " );
+    	System.out.println(tree.containsNonBST(67403819));
     	
     	System.out.println("To String method : ");
     	System.out.println(tree.toString());
