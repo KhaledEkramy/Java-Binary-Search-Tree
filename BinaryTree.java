@@ -109,7 +109,7 @@ public class BinaryTree{
 				NumOfSwaps++ ;
 				return current ;
 			}
-		}else if(current.left != null) {
+		}else if(current.left != null && current.right == null) {
 			if(current == root) {
 				root = current.left ;
 				NumOfSwaps++ ;
@@ -124,7 +124,7 @@ public class BinaryTree{
 				NumOfSwaps++ ;
 				return current ;
 			}
-		}else if(current.right != null) {
+		}else if(current.right != null && current.left == null) {
 			if(current == root) {
 				root = current.right ;
 				NumOfSwaps++ ;
